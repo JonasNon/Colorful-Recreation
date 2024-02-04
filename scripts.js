@@ -12,10 +12,13 @@ const holder = document.getElementById("square-holder")
 
 let divList = []
 let squareCount = 100
-let avaliableColors = ['red','blue','orange','purple','green','cyan','black','yellow','pink']
+let avaliableColors = ['red','blue','orange','purple','green','cyan','yellow','pink','black']
+//change above array to determine colors
+
+let colorfulness = false
+
 
 //get screen length
-
 for (let i = 0; i < squareCount; i++) {
   let newDiv = document.createElement("div");
   // newDiv.style.border = "white"
@@ -56,8 +59,10 @@ const onMouseMove = (e) =>{
 
 
     let divColor = avaliableColors[Math.floor(Math.random()*avaliableColors.length)]
+    if (colorfulness) {
+      currentDiv.style.background = divColor
+    }
     
-    // currentDiv.style.background = divColor
     // COMMENT OUT ABOVE LINE FOR VAST CHANGE
     divColor = avaliableColors[Math.floor(Math.random()*avaliableColors.length)]
     currentDiv.style.outlineColor = divColor
@@ -66,10 +71,10 @@ const onMouseMove = (e) =>{
     let currentTop = currentDiv.style.top
 
 
-    console.log(e.offsetX)
+    // console.log(e.offsetX)
     currentDiv.style.left = e.offsetX + 'px';
     currentDiv.style.top = e.offsetY + 'px';
-    //COMMENT OUT ABOVE 3 LINES FOR STATIC MOVEMENT
+    //COMMENT OUT ABOVE 2 LINES FOR STATIC MOVEMENT
 
     currentDiv.style.position = "relative"
 
@@ -84,9 +89,9 @@ const onMouseMove = (e) =>{
 document.addEventListener('mousemove', onMouseMove);
 
 
-const unHide = () => {
+const unHide = (setting) => {
   document.body.style.cursor = 'none';
-
+  colorfulness = setting
   for (let i = 0; i < squareCount; i++) {
     let currentDiv = divList[i]
     currentDiv.style.visibility = "visible";
@@ -94,7 +99,9 @@ const unHide = () => {
 
     
   }
-  document.getElementById("yes").style.visibility = "hidden";
   document.getElementById("startText").style.visibility = "hidden";
+  document.getElementById("little").style.visibility = "hidden";
+  document.getElementById("yes").style.visibility = "hidden";
+
 
 }
