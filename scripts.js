@@ -115,9 +115,9 @@ const unHide = (setting) => {
   document.getElementById("little").style.visibility = "hidden";
   document.getElementById("yes").style.visibility = "hidden";
   document.getElementById("dynamic").style.visibility = "hidden";
-  document.getElementById("static").style.visibility = "hidden";
+  // document.getElementById("static").style.visibility = "hidden";
   document.getElementById("move").style.visibility = "hidden";
-  document.getElementById("dontMove").style.visibility = "hidden";
+  // document.getElementById("dontMove").style.visibility = "hidden";
 }
 
 const changeStatic = (option) => {
