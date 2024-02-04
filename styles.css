@@ -49,6 +49,6 @@ input {
 }
 
 #yes {
-  position: absolute;
+  position: static;
   
 }
