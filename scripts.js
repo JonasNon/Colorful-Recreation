@@ -16,6 +16,8 @@ let avaliableColors = ['red','blue','orange','purple','green','cyan','yellow','p
 //change above array to determine colors
 
 let colorfulness = false
+let static = true
+let inMenu = true
 
 
 //get screen length
@@ -45,6 +47,7 @@ const testLog = () => {
 }
 
 const onMouseMove = (e) =>{
+ 
   for (let i = 0; i < squareCount; i++) {
     let currentDiv = divList[i];
     // console.log(currentDiv.style.border)
@@ -63,21 +66,27 @@ const onMouseMove = (e) =>{
       currentDiv.style.background = divColor
     }
     
-    // COMMENT OUT ABOVE LINE FOR VAST CHANGE
     divColor = avaliableColors[Math.floor(Math.random()*avaliableColors.length)]
     currentDiv.style.outlineColor = divColor
 
     let currentLeft = currentDiv.style.left
     let currentTop = currentDiv.style.top
 
+    
+    if (!static) {
+      currentDiv.style.left = e.offsetX + 'px';
+      currentDiv.style.top = e.offsetY + 'px';
+     //COMMENT OUT ABOVE 2 LINES FOR STATIC MOVEMENT
 
+      currentDiv.style.position = "relative"
+
+    } else  if (!inMenu) {
+
+      currentDiv.style.transform = "none";
+
+    }
     // console.log(e.offsetX)
-    currentDiv.style.left = e.offsetX + 'px';
-    currentDiv.style.top = e.offsetY + 'px';
-    //COMMENT OUT ABOVE 2 LINES FOR STATIC MOVEMENT
-
-    currentDiv.style.position = "relative"
-
+    
 
   }
   // for (let i = 0; i < squareCount; i++) {
@@ -99,9 +108,27 @@ const unHide = (setting) => {
 
     
   }
+
+  inMenu = false;
+
   document.getElementById("startText").style.visibility = "hidden";
   document.getElementById("little").style.visibility = "hidden";
   document.getElementById("yes").style.visibility = "hidden";
+  document.getElementById("dynamic").style.visibility = "hidden";
+  document.getElementById("static").style.visibility = "hidden";
+  document.getElementById("move").style.visibility = "hidden";
+  document.getElementById("dontMove").style.visibility = "hidden";
+}
 
-
+const changeStatic = (option) => {
+  static = option
+  if (static) {
+    // document.querySelectorAll("div").forEach(div.style.transform = "translate(50%,50%);")
+    // document.getElementsByTagName('div').style.transform = "translate(50%,50%);";
+    // for (let i = 0; i < squareCount; i++) {
+    //   let currentDiv = divList[i];
+    //   currentDiv.style.transform = "none";
+    //   console.log('HERE')
+    // }
+  }
 }

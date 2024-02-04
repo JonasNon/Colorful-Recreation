@@ -11,6 +11,11 @@
     <p id="startText">Would you like to be disoriented???</p>
     <input type="submit" id="little" value="Only a little." onclick="unHide(false)">
     <input type="submit" id="yes" value="Yes! Very much!" onclick="unHide(true)">
+    <p1 id="move">Make it move!</p1>
+    <input type="radio" name="static" id="dynamic" onclick="changeStatic(false)">
+    <p1 id="dontMove">Don't make it move please...</p1>
+    <input type="radio" name="static" id="static" value="yes" onclick="changeStatic(true)">
+
   </section>
   <section id="square-holder" onclick="testLog()" onmousemove="onMouseMove()">
   </section>
