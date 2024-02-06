@@ -13,14 +13,14 @@ const holder = document.getElementById("square-holder")
 let divList = []
 let squareCount = 100
 let avaliableColorsArray = [
-['red','blue','orange','purple','green','cyan','yellow','pink','black'],
+['red','blue','orange','purple','green','cyan','yellow','pink'],
 ['#618264','#79AC78','#B0D9B1','#D0E7D2'], //green-ish
 ['#EEF5FF','#B4D4FF','#86B6F6','#176B87'], //blue-ish
 ['#711DB0','#C21292','#EF4040','#FFA732'], //purple-ish
 ['red','blue','orange','purple','green','cyan','yellow','pink','black','black','black','black','black','black','black','black','black','black','black','black','black'],
 
 ]
-let avaliableColors = ['red','blue','orange','purple','green','cyan','yellow','pink','black']
+let avaliableColors = avaliableColorsArray[0]
 
 //change above array to determine colors
 
