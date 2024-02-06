@@ -8,14 +8,40 @@
 </head>
 <body>
   <section id="mainMenu" onclick="testLog()">
-    <p id="startText">Would you like to be disoriented???</p>
-    <input type="submit" id="little" value="Only a little." onclick="unHide(false)">
-    <input type="submit" id="yes" value="Yes! Very much!" onclick="unHide(true)">
-    <p1 id="move">Make it move!</p1>
-    <input type="radio" name="static" id="dynamic" onclick="changeStatic(false)">
+    <p id="startText" class="menuItem">Would you like to be disoriented???</p>
+    <section class="menuItem" id="submit-buttons">
+      <input type="submit" id="little" value="Only a little." class="menuItem" onclick="unHide(false)">
+      <input type="submit" id="yes" value="Yes! Very much!" class="menuItem" onclick="unHide(true)">
+    </section>
+    
+    <p1 id="move" class="menuItem">Make it move!</p1>
+    <input type="radio" name="static" id="dynamic" class="menuItem" onclick="changeStatic(false)">
     <!-- <p1 id="dontMove">Don't make it move please...</p1>
     <input type="radio" name="static" id="static" value="yes" onclick="changeStatic(true)"> -->
-
+    <p id="colorText" class="menuItem">Select color scheme below.</p>
+    <section id="color-options" class="menuItem">
+      <section class="color-two-item">
+        <p class="small-text">Rainbow</p>
+        <input type="radio" id="rainbow-ish" class="color" class="menuItem" name="color" onclick="changeColor(0)">
+      </section>
+      <section class="color-two-item">
+        <p class="small-text">Green</p>
+        <input type="radio" id="green-ish" class="color" class="menuItem" name="color" onclick="changeColor(1)">
+      </section>
+      <section class="color-two-item">
+        <p class="small-text">Blue</p>
+        <input type="radio" id="blue-ish" class="color" class="menuItem" name="color" onclick="changeColor(2)">
+      </section>
+      <section class="color-two-item">
+        <p class="small-text ">Purple</p>
+        <input type="radio" id="purple-ish" class="color" class="menuItem" name="color" onclick="changeColor(3)">
+      </section>
+      <section class="color-two-item">
+        <p class="small-text">Black</p>
+        <input type="radio" id="black-ish" class="color" class="menuItem" name="color" onclick="changeColor(4)">
+      </section>
+    </section>
+    
   </section>
   <section id="square-holder" onclick="testLog()" onmousemove="onMouseMove()">
   </section>

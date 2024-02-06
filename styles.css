@@ -36,6 +36,7 @@ div {
   outline: 3px solid white;
   background-color: black;
   transform:translate(-500%,-500%);
+  /* visibility: */
 }
 
 p {
@@ -57,4 +58,36 @@ p1 {
   font-size: 20px;
   color: white;
   padding-top: 30px;
+}
+
+#color-options {
+  padding-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+#colorText {
+  font-size: 20px;
+  padding-top: 70px;
+}
+
+#submit-buttons {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.color-two-item {
+  /* background-color: rgb(29, 29, 29); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 10px;
+}
+
+.small-text {
+  font-size: 15px;
 }
